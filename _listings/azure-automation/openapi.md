@@ -1,0 +1,380 @@
+---
+swagger: "2.0"
+x-collection-name: Azure Automation
+x-complete: 1
+info:
+  title: AutomationManagementClient
+  version: 1.0.0
+host: management.azure.com
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups/{hybridRunbookWorkerGroupName}
+  : delete:
+      summary: Hybrid Runbook Worker Group Delete
+      description: Delete a hybrid runbook worker group.
+      operationId: HybridRunbookWorkerGroup_Delete
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamehybridrunbookworkergroupshybridrunbookworkergroupname-delete
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: Automation account name
+      - in: path
+        name: hybridRunbookWorkerGroupName
+        description: The hybrid runbook worker group name
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Hybrid
+      - Runbook
+      - Worker
+      - Group
+    get:
+      summary: Hybrid Runbook Worker Group Get
+      description: Retrieve a hybrid runbook worker group.
+      operationId: HybridRunbookWorkerGroup_Get
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamehybridrunbookworkergroupshybridrunbookworkergroupname-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: path
+        name: hybridRunbookWorkerGroupName
+        description: The hybrid runbook worker group name
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Hybrid
+      - Runbook
+      - Worker
+      - Group
+    patch:
+      summary: Hybrid Runbook Worker Group Update
+      description: Update a hybrid runbook worker group.
+      operationId: HybridRunbookWorkerGroup_Update
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamehybridrunbookworkergroupshybridrunbookworkergroupname-patch
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: path
+        name: hybridRunbookWorkerGroupName
+        description: The hybrid runbook worker group name
+      - in: query
+        name: No Name
+      - in: body
+        name: parameters
+        description: The hybrid runbook worker group
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Hybrid
+      - Runbook
+      - Worker
+      - Group
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups
+  : get:
+      summary: Hybrid Runbook Worker Group List By Automation Account
+      description: Retrieve a list of hybrid runbook worker groups.
+      operationId: HybridRunbookWorkerGroup_ListByAutomationAccount
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamehybridrunbookworkergroups-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Hybrid
+      - Runbook
+      - Worker
+      - Group
+      - List
+      - Automation
+      - Account
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobId}/runbookContent
+  : get:
+      summary: Job Get Runbook Content
+      description: Retrieve the runbook content of the job identified by job id.
+      operationId: Job_GetRunbookContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamejobsjobidrunbookcontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: path
+        name: jobId
+        description: The job id
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Job
+      - ""
+      - Runbook
+      - Content
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/content
+  : get:
+      summary: Runbook Draft Get Content
+      description: Retrieve the content of runbook draft identified by runbook name.
+      operationId: RunbookDraft_GetContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftcontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - ""
+      - Content
+    put:
+      summary: Runbook Draft Create Or Update
+      description: Updates the runbook draft with runbookStream as its content.
+      operationId: RunbookDraft_CreateOrUpdate
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftcontent-put
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: body
+        name: runbookContent
+        description: Therunbookdraftcontent
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - Or
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft
+  : get:
+      summary: Runbook Draft Get
+      description: Retrieve the runbook draft identified by runbook name.
+      operationId: RunbookDraft_Get
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraft-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/publish
+  : post:
+      summary: Runbook Draft Publish
+      description: Publish runbook draft.
+      operationId: RunbookDraft_Publish
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftpublish-post
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The parameters supplied to the publish runbook operation
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - Publish
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/undoEdit
+  : post:
+      summary: Runbook Draft Undo Edit
+      description: Retrieve the runbook identified by runbook name.
+      operationId: RunbookDraft_UndoEdit
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftundoedit-post
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - Undo
+      - Edit
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/content
+  : get:
+      summary: Runbook Get Content
+      description: Retrieve the content of runbook identified by runbook name.
+      operationId: Runbook_GetContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamecontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - ""
+      - Content
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}
+  : get:
+      summary: Runbook Get
+      description: Retrieve the runbook identified by runbook name.
+      operationId: Runbook_Get
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbookname-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+    put:
+      summary: Runbook Create Or Update
+      description: Create the runbook identified by runbook name.
+      operationId: Runbook_CreateOrUpdate
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbookname-put
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: body
+        name: parameters
+        description: The create or update parameters for runbook
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Or
+    patch:
+      summary: Runbook Update
+      description: Update the runbook identified by runbook name.
+      operationId: Runbook_Update
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbookname-patch
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: body
+        name: parameters
+        description: The update parameters for runbook
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+    delete:
+      summary: Runbook Delete
+      description: Delete the runbook by name.
+      operationId: Runbook_Delete
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbookname-delete
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks
+  : get:
+      summary: Runbook List By Automation Account
+      description: Retrieve a list of runbooks.
+      operationId: Runbook_ListByAutomationAccount
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooks-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - List
+      - Automation
+      - Account
+---
