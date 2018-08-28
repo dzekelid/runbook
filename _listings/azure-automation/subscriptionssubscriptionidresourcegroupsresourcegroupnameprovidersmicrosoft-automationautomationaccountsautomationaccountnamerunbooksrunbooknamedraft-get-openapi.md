@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Azure Automation
 x-complete: 0
 info:
-  title: Azure Automation API Hybrid Runbook Worker Group List By Automation Account
+  title: Azure Automation API Runbook Draft Get
   version: 1.0.0
-  description: Retrieve a list of hybrid runbook worker groups.
+  description: Retrieve the runbook draft identified by runbook name.
 host: management.azure.com
 basePath: /
 schemes:
@@ -110,6 +110,99 @@ paths:
       - List
       - Automation
       - Account
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobId}/runbookContent
+  : get:
+      summary: Job Get Runbook Content
+      description: Retrieve the runbook content of the job identified by job id.
+      operationId: Job_GetRunbookContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamejobsjobidrunbookcontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: path
+        name: jobId
+        description: The job id
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Job
+      - ""
+      - Runbook
+      - Content
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/content
+  : get:
+      summary: Runbook Draft Get Content
+      description: Retrieve the content of runbook draft identified by runbook name.
+      operationId: RunbookDraft_GetContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftcontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - ""
+      - Content
+    put:
+      summary: Runbook Draft Create Or Update
+      description: Updates the runbook draft with runbookStream as its content.
+      operationId: RunbookDraft_CreateOrUpdate
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraftcontent-put
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: body
+        name: runbookContent
+        description: Therunbookdraftcontent
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
+      - Or
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft
+  : get:
+      summary: Runbook Draft Get
+      description: Retrieve the runbook draft identified by runbook name.
+      operationId: RunbookDraft_Get
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamerunbooksrunbooknamedraft-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: query
+        name: No Name
+      - in: path
+        name: runbookName
+        description: The runbook name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Runbook
+      - Draft
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

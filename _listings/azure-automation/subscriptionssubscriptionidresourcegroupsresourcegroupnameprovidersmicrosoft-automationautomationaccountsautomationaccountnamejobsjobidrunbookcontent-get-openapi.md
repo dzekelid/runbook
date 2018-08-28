@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Azure Automation
 x-complete: 0
 info:
-  title: Azure Automation API Hybrid Runbook Worker Group List By Automation Account
+  title: Azure Automation API Job Get Runbook Content
   version: 1.0.0
-  description: Retrieve a list of hybrid runbook worker groups.
+  description: Retrieve the runbook content of the job identified by job id.
 host: management.azure.com
 basePath: /
 schemes:
@@ -110,6 +110,29 @@ paths:
       - List
       - Automation
       - Account
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/jobs/{jobId}/runbookContent
+  : get:
+      summary: Job Get Runbook Content
+      description: Retrieve the runbook content of the job identified by job id.
+      operationId: Job_GetRunbookContent
+      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamejobsjobidrunbookcontent-get
+      parameters:
+      - in: path
+        name: automationAccountName
+        description: The automation account name
+      - in: path
+        name: jobId
+        description: The job id
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Job
+      - ""
+      - Runbook
+      - Content
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

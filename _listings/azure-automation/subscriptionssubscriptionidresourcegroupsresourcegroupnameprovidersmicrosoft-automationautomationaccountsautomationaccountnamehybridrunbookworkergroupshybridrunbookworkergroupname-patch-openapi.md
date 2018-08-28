@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Azure Automation
 x-complete: 0
 info:
-  title: Azure Automation API Hybrid Runbook Worker Group List By Automation Account
+  title: Azure Automation API Hybrid Runbook Worker Group Update
   version: 1.0.0
-  description: Retrieve a list of hybrid runbook worker groups.
+  description: Update a hybrid runbook worker group.
 host: management.azure.com
 basePath: /
 schemes:
@@ -87,29 +87,6 @@ paths:
       - Runbook
       - Worker
       - Group
-  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/hybridRunbookWorkerGroups
-  : get:
-      summary: Hybrid Runbook Worker Group List By Automation Account
-      description: Retrieve a list of hybrid runbook worker groups.
-      operationId: HybridRunbookWorkerGroup_ListByAutomationAccount
-      x-api-path-slug: subscriptionssubscriptionidresourcegroupsresourcegroupnameprovidersmicrosoft-automationautomationaccountsautomationaccountnamehybridrunbookworkergroups-get
-      parameters:
-      - in: path
-        name: automationAccountName
-        description: The automation account name
-      - in: query
-        name: No Name
-      responses:
-        200:
-          description: OK
-      tags:
-      - Hybrid
-      - Runbook
-      - Worker
-      - Group
-      - List
-      - Automation
-      - Account
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
